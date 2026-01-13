@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ToxicEscan - Come Saludable, Vive Mejor</title>
+    
+    <title>ToxicEscan, Come saludable</title>
+    
+    <link rel="icon" href="img/icon.png" type="image/png">
+
     <meta name="description" content="Analiza los ingredientes de tus productos en segundos con Inteligencia Artificial.">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,12 +17,12 @@
     <style>
         /* --- VARIABLES Y RESET --- */
         :root {
-            --primary: #2ecc71; /* Verde Yuka */
-            --primary-dark: #27ae60;
+            --primary: #2ecc71; /* Verde vibrante */
+            --primary-dark: #219d54; 
             --secondary: #2c3e50; /* Texto oscuro */
-            --bg-light: #f8fff9; /* Fondo ligeramente menta */
+            --bg-light: #f8fff9;
             --white: #ffffff;
-            --alert-red: #ef5350; /* Rojo de tu app */
+            --alert-red: #ef5350;
             --radius: 16px;
             --shadow: 0 10px 40px rgba(46, 204, 113, 0.1);
         }
@@ -30,7 +34,7 @@
             color: var(--secondary);
             background-color: var(--white);
             line-height: 1.6;
-            overflow-x: hidden; /* Evita scroll horizontal */
+            overflow-x: hidden;
         }
 
         a { text-decoration: none; color: inherit; transition: 0.3s; }
@@ -41,7 +45,7 @@
             max-width: 1100px;
             margin: 0 auto;
             padding: 0 25px;
-            position: relative; /* Necesario para el z-index */
+            position: relative;
             z-index: 10;
         }
 
@@ -68,10 +72,10 @@
             position: fixed;
             width: 100%;
             top: 0;
-            background: rgba(255,255,255,0.9);
+            background: rgba(255,255,255,0.95);
             backdrop-filter: blur(12px);
             z-index: 1000;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
         }
         
         .nav-flex {
@@ -90,52 +94,24 @@
         }
         
         .actual-logo {
-            width: 45px;
-            height: 45px;
-            object-fit: contain;
-            border-radius: 10px;
+            width: 45px; height: 45px; object-fit: contain; border-radius: 10px;
         }
 
         /* --- HERO SECTION --- */
         .hero {
-            padding: 180px 0 100px;
+            padding: 180px 0 120px;
             background: linear-gradient(180deg, #ffffff 0%, var(--bg-light) 100%);
             text-align: center;
             position: relative;
             overflow: hidden;
         }
 
-        /* --- ELEMENTOS DECORATIVOS FLOTANTES (AJUSTADOS) --- */
         .decor-side {
-            position: absolute;
-            top: 120px;
-            height: 80%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            pointer-events: none;
-            z-index: 1;
-            opacity: 0.8; /* Un poco más visibles */
+            position: absolute; top: 120px; height: 80%; display: flex; flex-direction: column; justify-content: space-around; pointer-events: none; z-index: 1; opacity: 0.8;
         }
-
-        /* AQUÍ ESTÁ EL CAMBIO: Del borde (-30px) al 8% hacia adentro */
-        .decor-left {
-            left: 8%; 
-            align-items: flex-end; /* Alineados hacia el texto */
-        }
-
-        .decor-right {
-            right: 8%; 
-            align-items: flex-start; /* Alineados hacia el texto */
-        }
-
-        .float-item {
-            width: 100px; /* Un poco más grandes */
-            height: auto;
-            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.15));
-            animation: float 6s ease-in-out infinite;
-        }
-
+        .decor-left { left: 8%; align-items: flex-end; }
+        .decor-right { right: 8%; align-items: flex-start; }
+        .float-item { width: 100px; height: auto; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.15)); animation: float 6s ease-in-out infinite; }
         .delay-1 { animation-delay: 0s; }
         .delay-2 { animation-delay: 1.5s; width: 80px; }
         .delay-3 { animation-delay: 3s; width: 120px; }
@@ -145,177 +121,122 @@
             50% { transform: translateY(-20px) rotate(5deg); }
             100% { transform: translateY(0px) rotate(0deg); }
         }
-        /* ------------------------------------------------ */
 
         .hero h1 {
-            font-size: 4rem;
-            font-weight: 800;
-            letter-spacing: -1.5px;
-            margin-bottom: 25px;
-            line-height: 1.1;
-            color: var(--secondary);
-            position: relative; z-index: 10;
+            font-size: 4rem; font-weight: 800; letter-spacing: -1.5px; margin-bottom: 25px; line-height: 1.1; color: var(--secondary); position: relative; z-index: 10;
         }
-        
         .hero h1 span { 
-            color: var(--primary); 
-            background: linear-gradient(120deg, rgba(46, 204, 113, 0.2) 0%, rgba(46, 204, 113, 0) 100%);
-            padding-right: 10px;
-            border-radius: 8px;
+            color: var(--primary); background: linear-gradient(120deg, rgba(46, 204, 113, 0.2) 0%, rgba(46, 204, 113, 0) 100%); padding-right: 10px; border-radius: 8px;
         }
-
         .hero p {
-            font-size: 1.3rem;
-            color: #647678;
-            max-width: 650px;
-            margin: 0 auto 50px;
-            font-weight: 400;
-            position: relative; z-index: 10;
+            font-size: 1.3rem; color: #647678; max-width: 650px; margin: 0 auto 50px; font-weight: 400; position: relative; z-index: 10;
         }
-
-        .hero-img-container {
-            margin-top: 60px;
-            position: relative;
-            z-index: 10;
-        }
-
+        .hero-img-container { margin-top: 60px; position: relative; z-index: 10; }
         .phone-mockup {
-            width: 320px;
-            height: 650px;
-            background: #000;
-            border-radius: 45px;
-            border: 12px solid #1a1a1a;
-            margin: 0 auto;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 30px 60px -15px rgba(0,0,0,0.3);
+            width: 320px; height: 650px; background: #000; border-radius: 45px; border: 12px solid #1a1a1a; margin: 0 auto; position: relative; overflow: hidden; box-shadow: 0 30px 60px -15px rgba(0,0,0,0.3);
         }
-
         .screen-content {
-            width: 100%;
-            height: 100%;
-            background: #f5f5f5;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding-top: 50px;
+            width: 100%; height: 100%; background: #f5f5f5; display: flex; flex-direction: column; align-items: center; padding-top: 50px;
         }
-        
-        .fake-header-bg {
-            position: absolute; top:0; width: 100%; height: 180px;
-            background: var(--alert-red);
-            border-bottom-left-radius: 30px; border-bottom-right-radius: 30px;
-        }
-        .fake-verdict {
-            color: white; font-weight: 800; font-size: 2rem;
-            position: relative; margin-top: 20px;
-        }
+        .fake-header-bg { position: absolute; top:0; width: 100%; height: 180px; background: var(--alert-red); border-bottom-left-radius: 30px; border-bottom-right-radius: 30px; }
+        .fake-verdict { color: white; font-weight: 800; font-size: 2rem; position: relative; margin-top: 20px; }
         .fake-emoji { font-size: 5rem; position: relative; margin: 10px 0; filter: drop-shadow(0 5px 10px rgba(0,0,0,0.2)); }
-        
-        .fake-card {
-            width: 88%; background: white; border-radius: 20px; padding: 25px;
-            margin-top: 20px; position: relative; box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-        }
-        .fake-danger {
-            background: #fff1f0; border-left: 4px solid var(--alert-red); padding: 15px; border-radius: 8px; margin-top: 20px; text-align: left; font-size: 0.9rem;
-        }
+        .fake-card { width: 88%; background: white; border-radius: 20px; padding: 25px; margin-top: 20px; position: relative; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+        .fake-danger { background: #fff1f0; border-left: 4px solid var(--alert-red); padding: 15px; border-radius: 8px; margin-top: 20px; text-align: left; font-size: 0.9rem; }
 
-        /* --- FEATURES --- */
+
+        /* --- FEATURES (VERDE) --- */
         .features {
-            padding: 120px 0;
-            background: var(--white);
+            padding: 100px 0 120px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            background-image: url('https://www.transparenttextures.com/patterns/healthy-food.png'), linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            background-blend-mode: soft-light;
+            color: white; 
+            position: relative;
+            clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 100%);
+            margin-top: -50px; 
         }
         
-        .section-title {
-            text-align: center;
-            margin-bottom: 90px;
-        }
-        .section-title h2 { font-size: 2.8rem; margin-bottom: 15px; color: var(--secondary); }
-        .section-title p { color: #647678; font-size: 1.2rem; }
+        .section-title { text-align: center; margin-bottom: 70px; padding-top: 40px; }
+        .section-title h2 { font-size: 3rem; margin-bottom: 15px; color: white; font-weight: 800; }
+        .section-title p { color: rgba(255,255,255,0.9); font-size: 1.3rem; max-width: 700px; margin: 0 auto; }
 
         .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 50px;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; align-items: stretch;
         }
-
         .feature-card {
-            background: white;
-            padding: 50px 40px;
-            border-radius: 24px;
-            transition: 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            border: 2px solid #f0f4f1;
+            background: white; padding: 40px 30px; border-radius: 24px; transition: all 0.3s ease; text-align: center; box-shadow: 0 20px 40px rgba(0,0,0,0.15); border: none; color: var(--secondary);
+        }
+        .feature-card:hover { transform: translateY(-10px) scale(1.02); box-shadow: 0 30px 60px rgba(0,0,0,0.2); }
+        .icon-box {
+            width: 90px; height: 90px; background: rgba(46, 204, 113, 0.1); color: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; margin: 0 auto 25px;
+        }
+        .feature-card h3 { font-size: 1.4rem; margin-bottom: 15px; font-weight: 700; }
+        .feature-card p { color: #666; font-size: 1rem; line-height: 1.7; }
+
+        /* --- SECCIÓN INDEPENDENCIA --- */
+        .independence {
+            padding: 100px 0 120px;
+            background: var(--white);
             text-align: center;
         }
-        .feature-card:hover {
-            transform: translateY(-15px);
-            box-shadow: var(--shadow);
-            border-color: transparent;
+        
+        .independence h2 {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            font-weight: 800;
+            margin-bottom: 60px;
         }
 
-        .icon-box {
-            width: 80px; height: 80px;
-            background: #e9f9ee;
-            color: var(--primary);
-            border-radius: 22px;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 2.2rem; margin: 0 auto 30px;
-        }
-        .feature-card h3 { font-size: 1.5rem; margin-bottom: 15px; }
+        .indep-card { padding: 20px; }
+        .indep-icon { font-size: 3.5rem; margin-bottom: 25px; display: inline-block; }
+        .indep-card h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 15px; color: var(--secondary); }
+        .indep-card p { color: #7f8c8d; font-size: 1rem; line-height: 1.6; }
 
         /* --- INSTALLATION GUIDE --- */
         .install-guide {
             background: var(--secondary);
             color: white;
-            padding: 100px 0;
+            padding: 120px 0 100px;
             text-align: center;
             border-radius: 30px 30px 0 0;
             margin-top: -30px;
+            position: relative;
+            z-index: 5;
         }
 
-        .steps {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 50px;
-            flex-wrap: wrap;
+        .steps { display: flex; justify-content: center; gap: 30px; margin-top: 50px; flex-wrap: wrap; }
+        
+        .step { 
+            background: rgba(255,255,255,0.08); 
+            padding: 40px 30px; 
+            border-radius: 20px; 
+            max-width: 320px; 
+            text-align: center; 
+            border: 1px solid rgba(255,255,255,0.1); 
+        }
+        
+        .step-number { 
+            font-size: 4rem; 
+            font-weight: 800; 
+            color: var(--primary); 
+            display: block; 
+            margin-bottom: 15px; 
+            opacity: 1; 
+            line-height: 1;
         }
 
-        .step {
-            background: rgba(255,255,255,0.08);
-            padding: 30px;
-            border-radius: 20px;
-            max-width: 320px;
-            text-align: left;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-        .step-number {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--primary);
-            display: block;
-            margin-bottom: 15px;
-            opacity: 0.8;
-        }
+        footer { padding: 40px 0; text-align: center; color: #95a5a6; font-size: 0.95rem; background: #253342; }
 
-        footer {
-            padding: 40px 0;
-            text-align: center;
-            color: #95a5a6;
-            font-size: 0.95rem;
-            background: #253342;
-        }
-
-        /* Responsive: Se ocultan los decorativos si la pantalla es menor a 1200px para no tapar texto */
-        @media (max-width: 1200px) {
-            .decor-side { display: none; } 
-        }
-
+        /* Responsive */
+        @media (max-width: 1200px) { .decor-side { display: none; } }
+        @media (max-width: 992px) { .grid-3 { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); } }
         @media (max-width: 768px) {
-            .hero h1 { font-size: 3rem; }
+            .hero { padding-top: 140px; }
+            .hero h1 { font-size: 2.8rem; }
             .nav-links { display: none; }
             .steps { flex-direction: column; align-items: center; }
-            .hero { padding-top: 140px; }
+            .features { clip-path: polygon(0 0, 100% 2%, 100% 100%, 0 100%); }
         }
     </style>
 </head>
@@ -328,20 +249,18 @@
                 ToxicEscan
             </div>
             <nav class="nav-links">
-                <a href="#funciona" style="margin-right: 25px; font-weight: 600;">¿Cómo funciona?</a>
-                <a href="#descargar" class="btn" style="padding: 10px 25px; font-size: 1rem;">Descargar App</a>
+                <a href="#funciona" style="margin-right: 25px; font-weight: 600; font-size: 0.95rem;">¿Cómo funciona?</a>
+                <a href="https://drive.google.com/file/d/1edQF6fZTdlmXXU7XCrbj_l7cIc0Mp6Q1/view?usp=sharing" class="btn" style="padding: 12px 30px; font-size: 1rem;" target="_blank">Descargar App</a>
             </nav>
         </div>
     </header>
 
     <section class="hero">
-        
         <div class="decor-side decor-left">
             <img src="https://cdn-icons-png.flaticon.com/512/541/541732.png" class="float-item delay-1" alt="Galleta">
             <img src="https://cdn-icons-png.flaticon.com/512/2722/2722527.png" class="float-item delay-3" alt="Gaseosa">
             <img src="https://cdn-icons-png.flaticon.com/512/1792/1792931.png" class="float-item delay-2" alt="Snack">
         </div>
-
         <div class="decor-side decor-right">
             <img src="https://cdn-icons-png.flaticon.com/512/3081/3081949.png" class="float-item delay-2" alt="Embutido">
             <img src="https://cdn-icons-png.flaticon.com/512/2553/2553691.png" class="float-item delay-1" alt="Dulces">
@@ -353,7 +272,7 @@
             <p>Usa la Inteligencia Artificial para detectar ingredientes tóxicos ocultos. Sin registros, sin publicidad, 100% enfocado en tu salud.</p>
             
             <div class="cta-buttons" id="descargar">
-                <a href="#" class="btn" id="downloadBtn">📥 Descargar APK para Android</a>
+                <a href="https://drive.google.com/file/d/1edQF6fZTdlmXXU7XCrbj_l7cIc0Mp6Q1/view?usp=sharing" class="btn" id="downloadBtn" target="_blank">📥 Descargar APK para Android</a>
             </div>
             <p style="font-size: 0.85rem; margin-top: 20px; color: #95a5a6; font-weight: 500;">*Versión Beta 1.0 - Archivo seguro verificado</p>
 
@@ -363,7 +282,6 @@
                         <div class="fake-header-bg"></div>
                         <div class="fake-emoji">🍪</div>
                         <div class="fake-verdict">🔴 TÓXICO</div>
-                        
                         <div class="fake-card">
                             <h3 style="margin-bottom: 10px;">Galletas "Súper Dulces"</h3>
                             <p style="color: #666; font-size: 0.9rem;">Altamente procesado</p>
@@ -405,6 +323,30 @@
         </div>
     </section>
 
+    <section class="independence">
+        <div class="container">
+            <h2>Un proyecto 100% independiente</h2>
+            
+            <div class="grid-3">
+                <div class="indep-card">
+                    <div class="indep-icon">⚖️</div>
+                    <h3>Sin influencias de las marcas</h3>
+                    <p>Ninguna marca ni grupo industrial puede influir en las evaluaciones y recomendaciones emitidas.</p>
+                </div>
+                <div class="indep-card">
+                    <div class="indep-icon">📵</div>
+                    <h3>Sin publicidad</h3>
+                    <p>Ninguna marca puede remunerar a ToxicEscan para promocionar sus productos en la aplicación.</p>
+                </div>
+                <div class="indep-card">
+                    <div class="indep-icon">💎</div>
+                    <h3>Una financiación limpia</h3>
+                    <p>ToxicEscan desarrolla métodos de financiación responsables para evitar que cualquier conflicto de interés afecte a la objetividad de los análisis.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="install-guide">
         <div class="container">
             <h2 style="font-size: 2.5rem; margin-bottom: 20px;">¿Cómo instalar la Beta?</h2>
@@ -433,7 +375,7 @@
     <footer>
         <div class="container">
             <p style="margin-bottom: 10px; color: white; font-weight: bold;">ToxicEscan App</p>
-            <p>&copy; 2024. Diseñado para ayudarte a elegir mejor.</p>
+            <p>&copy; 2026. Diseñado para ayudarte a elegir mejor.</p>
         </div>
     </footer>
 
@@ -443,24 +385,14 @@
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if(target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
         });
 
         const btn = document.getElementById('downloadBtn');
         btn.addEventListener('click', function() {
-            if (this.getAttribute('href') === '#') {
-                alert('¡Ups! El link de descarga se está configurando. Intenta en unos minutos.');
-            } else {
-                this.innerHTML = '⏳ Iniciando descarga...';
-                setTimeout(() => {
-                    this.innerHTML = '📥 Descargar APK para Android';
-                }, 3000);
-            }
+           this.innerHTML = '⏳ Abriendo...';
         });
     </script>
 </body>
